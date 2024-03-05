@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul li {
+        display:inline-block;
+        width: 100px; /* 너비 100px */
+        height: 100px; /* 높이 100px */
+        background-color: pink; 
+        font-weight: bold; /* 글꼴 굵기를 볼드로 지정 */
+        line-height: 100px; /* 텍스트의 행 높이를 상자의 높이와 동일하게 설정하여 텍스트를 상자 가운데 정렬 */
+        text-align: center; /* 텍스트 가운데 정렬 */
+      }
+
+      ul li:nth-child(1) {
+        opacity: 1;
+      }
+
+      ul li:nth-child(2) {
+        opacity: 0.7;
+      }
+
+      ul li:nth-child(3) {
+        opacity: 0.3;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>만세!</li>
+      <li>만세!!</li>
+      <li>만세!!!</li>
+    </ul>
+  </body>
+</html>
