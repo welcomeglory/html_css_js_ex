@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    /* 전역 스타일 */
+body, header, footer, h1, h2, h3, h4, h5, h6, p, ul, li, div, address, small, a, strong, img {
+    margin: 0; /* 모든 요소의 바깥 여백을 0으로 설정 */
+    padding: 0; /* 모든 요소의 안쪽 여백을 0으로 설정 */
+    transition: 0.5s; /* 모든 요소에 대한 변화를 부드럽게 적용하는 0.5초의 트랜지션 효과 설정 */
+}
+
+address, small, a, strong {
+    color: #000; /* 특정 요소들의 텍스트 색상을 검정색(#000)으로 설정 */
+    text-decoration: none; /* 텍스트에 밑줄을 제거 */
+    font-size: 1em; /* 특정 요소들의 기본 글꼴 크기를 1em(기본 크기)으로 설정 */
+    font-weight: normal; /* 특정 요소들의 글꼴 두껍기를 기본(normal)으로 설정 */
+    font-style: normal; /* 특정 요소들의 글꼴 스타일을 기본(normal)으로 설정 */
+}
+
+li {
+    list-style: none; /* 리스트 요소의 기본 목록 스타일을 제거 */
+}
+
+.hidden {
+    position: absolute; /* 숨김 클래스에 대한 위치를 절대 위치로 설정 */
+    left: -9999px; /* 화면 밖으로 이동하여 숨김 처리 */
+}
+
+/* body 스타일 */
+body {
+    font-family: 'Noto Sans KR', sans-serif; /* 본문의 기본 글꼴을 'Noto Sans KR' 또는 sans-serif로 설정 */
+    font-weight: 100; /* 본문의 기본 글꼴 가중치를 100으로 설정 */
+    background: linear-gradient(180deg, #66daff 0%, #fff 500px) no-repeat; /* 배경을 선형 그라데이션으로 설정 */
+    width: 960px; /* 본문의 너비를 960픽셀로 설정 */
+    margin: 10px auto 0; /* 위쪽 여백 10픽셀, 좌우 여백은 자동 조정 */
+    border: 1px solid gray; /* 테두리를 회색 실선으로 설정 */
+}
+
+/* header 스타일 */
+header {
+    height: 280px; /* 헤더의 높이를 280픽셀로 설정 */
+    background: url(http://110.12.108.206/VirtualHomepages/mobiletest2/images/bg_header.png) no-repeat center; /* 배경 이미지를 중앙 정렬하여 설정 */
+}
+/* headerWrap 스타일 */
+#headerWrap {
+    overflow: hidden; /* 요소의 내용이 넘치면 숨김 처리 */
+    margin-bottom: 30px; /* 하단 마진을 30픽셀로 설정 */
+}
+
+/* header 내 h1 스타일 */
+#header h1 {
+    font-weight: 900; /* 글꼴 두껍기를 900으로 설정 */
+    color: yellow; /* 글꼴 색상을 노란색으로 설정 */
+}
+
+/* gnb 스타일 */
+#gnb {
+    padding-top: 200px; /* 상단 패딩을 200픽셀로 설정 */
+}
+
+/* gnb ul 스타일 */
+#gnb ul {}
+
+/* gnb ul li 스타일 */
+#gnb ul li {
+    float: left; /* 리스트 아이템을 좌측으로 부유시킴 */
+    width: 25%; /* 리스트 아이템의 너비를 25%로 설정 */
+    text-align: center; /* 텍스트를 가운데 정렬 */
+}
+
+/* gnb ul li a 스타일 */
+#gnb ul li a {
+    height: 3em; /* 링크의 높이를 3em으로 설정 */
+    width: 100%; /* 링크의 너비를 100%로 설정 */
+    line-height: 3em; /* 텍스트 라인 높이를 3em으로 설정 */
+    display: block; /* 링크를 블록 수준 요소로 지정하여 전체 영역을 차지하게 함 */
+    background-color: green; /* 배경색을 녹색으로 설정 */
+    font-weight: 500; /* 글꼴 두껍기를 500으로 설정 */
+    color: #fff; /* 글꼴 색상을 흰색으로 설정 */
+}
+
+/* gnb ul li a:hover 스타일 */
+#gnb ul li a:hover {
+    color: green; /* 호버 시 글꼴 색상을 녹색으로 변경 */
+    background: #fff; /* 호버 시 배경색을 흰색으로 변경 */
+}
+
+/* gnb ul li a:active 스타일 */
+#gnb ul li a:active {
+    color: #fff; /* 액티브 시 글꼴 색상을 흰색으로 변경 */
+    background: #000; /* 액티브 시 배경색을 검은색으로 변경 */
+}
+
+/* main 스타일 */
+main {
+    width: 740px; /* 너비를 740픽셀로 설정 */
+    float: left; /* 왼쪽으로 부유시킴 */
+    margin-bottom: 10px; /* 하단 마진을 10픽셀로 설정 */
+}
+
+/* content 스타일 */
+#content {
+    line-height: 1.8em; /* 텍스트 줄 간격을 1.8em으로 설정 */
+    margin: 0 25px; /* 좌우 여백을 25픽셀로 설정 */
+}
+
+/* content 내 h2 스타일 */
+#content h2 {
+    line-height: 2em; /* 텍스트 줄 간격을 2em으로 설정 */
+}
+
+/* sidebar 스타일 */
+#sidebar {
+    width: 220px; /* 너비를 220픽셀로 설정 */
+    float: right; /* 오른쪽으로 부유시킴 */
+    padding: 20px 0; /* 위아래 여백을 20픽셀로 설정 */
+    text-align: center; /* 텍스트를 가운데 정렬 */
+    background: #dfd; /* 배경색을 연두색으로 설정 */
+}
+
+/* sidebar 내 img 스타일 */
+#sidebar img {
+    border: 1px solid #ccc; /* 이미지에 회색 테두리를 추가 */
+}
+
+/* footer 스타일 */
+#footer {
+    clear: both; /* 왼쪽, 오른쪽으로 플로팅된 요소를 해제 */
+    padding: 20px 0; /* 위아래 여백을 20픽셀로 설정 */
+    text-align: center; /* 텍스트를 가운데 정렬 */
+    background: #061f1f; /* 배경색을 어두운 파란색으로 설정 */
+}
+
+/* footer 내 small, address 스타일 */
+#footer small,
+#footer address {
+    color: #fff; /* 글꼴 색상을 흰색으로 설정 */
+    font-weight: 100; /* 글꼴 두껍기를 100으로 설정 */
+}
+
+/* 600-1023px 화면 크기에 대한 스타일 */
+@media all and (max-width: 1023px) {
+    body {
+        width: 530px; /* 너비를 530픽셀로 설정 */
+    }
+    main,
+    #sidebar {
+        width: auto; /* 너비를 자동으로 설정 */
+        float: none; /* 플로팅 해제 */
+    }
+    #sidebar img {
+        width: 30%; /* 이미지의 너비를 30%로 설정 */
+    }
+}
+
+/* 599px 이하 화면 크기에 대한 스타일 */
+@media all and (max-width: 599px) {
+    body {
+        border: none; /* 테두리 제거 */
+        width: 100%; /* 너비를 100%로 설정 */
+        margin: 0; /* 여백 제거 */
+    }
+    /* header 스타일 수정 */
+    #header {
+        background: black; /* 배경색을 검은색으로 변경 */
+        height: 75px; /* 높이를 75픽셀로 설정 */
+    }
+    /* header 내 h1 스타일 수정 */
+    #header h1 {
+        text-align: center; /* 텍스트를 가운데 정렬 */
+        padding: 0; /* 안쪽 여백 제거 */
+        font-size: 40px; /* 글꼴 크기를 40픽셀로 설정 */
+        line-height: 75px; /* 텍스트 줄 높이를 75픽셀로 설정 */
+    }
+    /* gnb 스타일 수정 */
+    #gnb {
+        padding-top: 10px; /* 상단 패딩을 10픽셀로 설정 */
+    }
+    /* gnb ul 스타일 수정 */
+    #gnb ul {
+        padding: 14px 20px; /* 위아래 패딩을 14픽셀, 좌우 패딩을 20픽셀로 설정 */
+    }
+    /* gnb ul li 스타일 수정 */
+    #gnb ul li {
+        display: block; /* 리스트 아이템을 블록 수준 요소로 변경 */
+        width: 100%; /* 너비를 100%로 설정 */
+        height: 3em; /* 높이를 3em으로 설정 */
+    }
+    /* gnb ul li a 스타일 수정 */
+    #gnb ul li a {
+        border: 1px solid #9c9c9c; /* 테두리를 회색으로 설정 */
+        border-radius: 10px; /* 테두리 모서리를 둥글게 설정 */
+        font-size: 0.8em; /* 글꼴 크기를 0.8em으로 설정 */
+        background: #fff; /* 배경색을 흰색으로 설정 */
+        color: #013d5b; /* 글꼴 색상을 어두운 파란색으로 설정 */
+    }
+    /* sidebar 내 img 스타일 수정 */
+    #sidebar img {
+        width: 90%; /* 이미지의 너비를 90%로 설정 */
+    }
+    /* footer 스타일 수정 */
+    #footer {
+        font-size: 0.7em; /* 글꼴 크기를 0.7em으로 설정 */
+    }
+}
+
+
+    </style>
+    <title>요안도라 게스트하우스</title>
+
+</head>
+
+<body>
+    <div id="headerWrap">
+        <header id="header">
+            <h1>Joandora</h1>
+            <nav id="gnb">
+                <h2 class="hidden">이용자 메뉴</h2>
+                <ul id="usermenu">
+                    <li><a href="#">이용안내</a></li>
+                    <li><a href="#">객실 소개</a></li>
+                    <li><a href="#">예약 방법</a></li>
+                    <li><a href="#">예약 하기</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <main>
+        <section id="content">
+            <h2>요안도라 소개</h2>
+            <article id="intro_joandora">
+                <strong>&#164;요안도라는 게스트 하우스(Guest House)형식의 농어촌 민박입니다</strong>
+                <p>성산의 날씨는 다음주 내내 높은 구름에 햇살 가득이라고 합니다. 목요일이면 섭씨 27도까지 오른다고 하지만, 늘 부는 바람이 쾌적한 균형을 잡아 마당에 마당에 나가 앉아 있는 시간이
+                    많아질듯 합니다.</p>
+                <br>
+                <p>오늘은 사진에 보이는 긴 돌담을 따라 들어오는 요안도레 올레 입구에 특곤색의 대문을 달았습니다.</p>
+                <br>
+                <p>내일은 두달 여동안 밖거리에 만든 게스트 하우스에 연백색의 황토 페인트를 칠할 예정입니다. 그리고 이것저것 사소한 정리를 마치고 나면, 나이 드시고 젊고 한 미지의 새식구들을 설렘으로 만나고 함께하고, 도시의
+                    바쁜 생활로 소원해진 오래된 친구와의 우정을 이 제주에서 새롭게 열어나가기 위해 요안도라를 세상에 알리려고 합니다.</p>
+                <br>
+                <p>그럼 이 홈페이지를 공식적으로 체계적으로 갖추면서, 그동안 공사로 어수선해 올려드리지 못한 집 안팎 사진들을 상세하게 올리고 당신을 만날 채비를 마치겠습니다</p>
+            </article>
+        </section>
+    </main>
+    <aside id="sidebar">
+        <h2 class="hidden">요안도라의 사진</h2>
+        <img src="http://110.12.108.206/VirtualHomepages/mobiletest2/images/1.jpg" alt="외관">
+        <img src="http://110.12.108.206/VirtualHomepages/mobiletest2/images/2.jpg" alt="외경1">
+        <img src="http://110.12.108.206/VirtualHomepages/mobiletest2/images/3.jpg" alt="외경2">
+    </aside>
+
+    <footer id="footer">
+        <address>제주특별자치도 남제주군 성산읍 수산리 000 번지</address>
+        <small>Copyright &copy;. All rights reserved.</small>
+    </footer>
+
+</body>
+
+</html>
