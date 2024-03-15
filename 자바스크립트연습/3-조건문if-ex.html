@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+        var kor = prompt("국어 : ");
+        var eng = prompt("영어 : ");
+        var math = prompt("수학 : ");
+        var total = Number(kor) + Number(eng) + Number(math);
+        var avg = total / 3.0;
+        
+        document.write("총점 : "+total +"<br>");
+        document.write("평균 : "+avg +"<br>");
+
+        if(avg >= 90){
+        document.write("수입니다.");
+        }
+        else if(avg >= 80){
+        document.write("우입니다.");
+        }
+        else if(avg >= 70){
+        document.write("미입니다.");
+        }
+        else if(avg >= 60){
+        document.write("양입니다.");
+        }
+        else{
+        document.write("가입니다.");
+        }
+
+    </script>    
+</body>
+</html>
