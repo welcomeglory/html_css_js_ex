@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1~10 까지의 숫자 중 짝수의 합
+        // var sum=0;
+        // for(var i=0; i<=10;i++){
+        //     if(i%2!=0){
+        //     continue;
+        //     }
+        //     sum += i;
+
+        // }
+        // document.write(sum);
+        // 1부터 100까지의 숫자 중에 7의 배수이자 5의 배수 중에 첫번째만 출력
+        for(var i=1; i<=100; i++){
+            if((i%7==0)&&(i%5==0)){
+                document.write(i);
+                break;//if문에서 빠져나가는게 아니라 반복문을 빠져나오는것
+            }
+        }
+        //
+
+
+
+
+
+        // var dan = prompt("단을 입력하시오.");
+        // var count=1;
+        // while(count <10){
+        //     document.write(Number(dan)+"*"+count+"="+Number(dan)*count+"<br>");
+        //     count++;
+        // }
+        // var count=0;
+        // do{
+        //     document.write("hello world<br>");
+        //     count++
+        // }while(count<5)
+        // for(var i=2; i<10; i++){
+        //     for(var j=1; j<10;j++){
+        //     document.write(i+" * "+j +" = "+(i * j)+"<br>");
+        //     console.log(i+" * "+j +" = "+(i * j));
+        //     }
+        //     document.write("<br>");
+        //     console.log('\n');
+        // }  
+    </script>
+</body>
+</html> 
