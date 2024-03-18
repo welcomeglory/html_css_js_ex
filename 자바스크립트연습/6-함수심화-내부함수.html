@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 내부함수 : 함수 안에 함수
+      function outFun(width,height){
+        console.log("width : "+width);
+        console.log("height : "+height);
+
+        function triangle(){
+          return (width*height) / 2.0;
+        }
+
+        function rectangle(){
+          return (width*height);
+        }
+
+        function circle(){
+          return (width*width*Math.PI);
+        }
+
+        // console.log("원넓이 : " +circle());
+        // console.log("사각형넓이 : " +rectangle());
+        // console.log("삼각형넓이 : " +triangle());
+      }
+      
+      outFun(3,5);
+      console.log("원넓이 : " +circle());
+
+
+    </script>
+  </head>
+  <body>
+    <script></script>
+  </body>
+</html>
