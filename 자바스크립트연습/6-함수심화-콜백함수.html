@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // function sayhello(name, callback){
+      //   document.write(name + "님 ");
+      //   document.write(callback());
+      // }
+      // sayhello("홍길동",function(){ return " 좋은아침입니다."});
+
+      // function add(x,y, callback){
+      //   callback(x+y);
+      // }
+
+      // add(1,2,function (result){
+      //   document.write(result +"<br>");//3
+      // });
+
+      // function sub(x,y, callback){
+      //   callback(x-y);
+      // }
+
+      // sub(1,2,function (result){
+      //   document.write(result);//-1
+      // });
+
+      // function print(num){
+      //   document.write(num+"번째 헬로월드<br>")
+      // }
+
+      // function callTreeTimes(callback){
+      //   for(var i=0;i<3;i++){
+      //     callback(i);
+      //   }
+      // }
+
+      // callTreeTimes(print)// print 콜백함수
+
+      //0번째 헬로월드
+      //1번째 헬로월드
+      //2번째 헬로월드
+
+      //별찍기
+
+      function triStarPrint1(num) {
+        for (var i = 0; i < num; i++) {
+          for (var j = 0; j <= i; j++) {
+            document.write("*");
+          }
+          document.write("<br>");
+        }
+      }
+      function triStarPrint2(num) {
+        for (var i = 0; i < num; i++) {
+          for (var j = num; j > i; j--) {
+            document.write("*");
+          }
+          document.write("<br>");
+        }
+      }
+      function triStarPrint3(num) {
+        for (var i = 0; i < num; i++) {
+          for (var j = num; j > i+1; j--) {
+            document.write("&nbsp");
+          }
+          for (var j = 0; j <= i; j++) {
+            document.write("*");
+          }
+          document.write("<br>");
+        }
+      }
+
+      function triStarPrint4(num) {
+        for (var i = 0; i < num; i++) {
+          for (var j = 0; j <= i-1; j++) {
+            document.write("&nbsp");
+          }
+          for (var j = 5; j > i; j--) {
+            document.write("*");
+          }
+          document.write("<br>");
+        }
+      }
+
+      function triStarPrint5(num) {
+        for (var i = 0; i < num; i++) {
+          for (var j = 1; j < num-i; j++) {
+            document.write("&nbsp");
+          }
+          for (var j = 0; j < 2 * i+1; j++) {
+            document.write("*");
+          }          
+          document.write("<br>");
+        }
+      }
+
+      function starPrint(count, callback) {
+        callback(count);
+      }
+
+      starPrint(5, triStarPrint1);
+
+      starPrint(5, triStarPrint2);
+
+      starPrint(5, triStarPrint3);
+
+      starPrint(5, triStarPrint4);
+
+      starPrint(5, triStarPrint5);
+    </script>
+  </head>
+  <body>
+    <script></script>
+  </body>
+</html>
