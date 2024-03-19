@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        /* 화면 정중앙에 위치하도록 CSS 설정 */
+        body, html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        /* 시계의 크기와 가운데 정렬 */
+        #clock {
+            font-size: em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock"></div>
+
+    <script>
+        function clock(){
+  var today = new Date();
+
+  var hours = today.getHours();
+var minutes = today.getMinutes();
+var seconds = today.getSeconds(); 
+
+document.body.innerHTML = hours +":" +minutes +":" +seconds +"<br>";
+
+ }
+
+ setInterval(clock,1000);
+    </script>
+</body>
+</html>
