@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/hello.js" type="text/javascript"></script>
+    <script>
+      // //객체를 만드는 다양한 방법들
+      // var bicycle = {
+      //   width: "200cm",
+      //   heigt: "100cm",
+      //   run: function () {
+      //     return "go!!!";
+      //   },
+      // };
+      // document.write(bicycle.width + "<br>");
+      // document.write(bicycle.heigt + "<br>");
+      // document.write(bicycle.run() + "<br>");
+
+      // document.write("<hr>");
+
+      // //두번째 객체를 만드는 방법(함수를 이용하여 객체 생성)
+      // function createCar(name, color, speed) {
+      //   var carObj = {
+      //     name: name,
+      //     color: color,
+      //     speed: speed,
+      //     run: function () {
+      //       return this.speed + "km/h";
+      //     },
+      //   };
+      //   return carObj;
+      // }
+
+      // var sorento = createCar("소렌토", "빨강", 130);
+      // document.write(sorento.name + "<br>");
+      // document.write(sorento.color + "<br>");
+      // document.write(sorento.speed + "<br>");
+
+      // document.write("<hr>");
+
+      // var sorento = createCar("소나타", "은색", 150);
+      // document.write(sorento.name + "<br>");
+      // document.write(sorento.color + "<br>");
+      // document.write(sorento.speed + "<br>");
+
+      
+
+      // (function (){
+      //   document.write("aaaaaa")
+      // })();
+      // // method();
+
+      // console.log(typeof calculator);
+      // document.write(calculator.add(1,2)+"<br>");
+      // document.write(calculator.sub(1,2)+"<br>");
+      // document.write(calculator.mul(1,2)+"<br>");
+
+      document.write("원넓이 : " + objArea.getCircle(10)+"<br>");
+      document.write("사각형넓이 : " +objArea.getRectangle(1,2)+"<br>");
+      document.write("삼각형넓이 : " +objArea.getTriangle(1,2)+"<br>");
+
+
+    </script>
+  </head>
+  <body></body>
+</html>

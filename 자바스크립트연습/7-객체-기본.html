@@ -34,69 +34,172 @@
       // var objCar = {
       //   width : "3em",
       //   height : "2m",
-      //   cc : "2000cc",
-      //   energy : 100,
-      //   speed : function(power){//객체에서 함수를 만들때는 익명함수형태로 만들면 된다.
-      //     return this.energy * power;  //※this 키워드 : 객체 내부를 가리키는 키워드로 객체 내부의 속성을 이용할 때 반듯이 명시해 줘야 한다
+      // //   cc : "2000cc",
+      // //   energy : 100,
+      // //   speed : function(power){//객체에서 함수를 만들때는 익명함수형태로 만들면 된다.
+      // //     return this.energy * power;  //※this 키워드 : 객체 내부를 가리키는 키워드로 객체 내부의 속성을 이용할 때 반듯이 명시해 줘야 한다
+      // //   }
+      // // }
+
+      // // document.write(objCar.speed(2)+"<br>")
+
+      // // var kor = Number(prompt("국어점수를 입력하시오."));
+      // // var eng = Number(prompt("영어점수를 입력하시오."));
+      // // var math = Number(prompt("수학점수를 입력하시오."));
+
+      // // var grade = {
+      // //   total: function (kor, eng, math) {
+      // //     return kor + eng + math;
+      // //   },
+      // //   avg: function (kor, eng, math) {
+      // //     return (kor + eng + math) / 3.0;
+      // //   },
+      // // };
+
+      // // document.write("총점 : " + grade.total(kor, eng, math) + "점<br>");
+      // // document.write("평균 : " + grade.avg(kor, eng, math) + "점<br>");
+
+      // var grade = {
+      //   kor: 0,
+      //   eng: 0,
+      //   math: 0,
+      //   getTotal: function (kor, eng, math) {
+      //     return this.kor + this.eng + this.math;
+      //   },
+      //   getAvg: function (kor, eng, math) {
+      //     return this.getTotal()/ 3.0;
+      //   },
+      //   getGrade: function () {
+      //     var avg = this.getAvg();
+      //     var str = "가 입니다."
+
+      //     if(avg>=90){
+      //       return "수입니다.";
+      //     }else if(avg>=80){
+      //       return "우입니다.";
+      //     }else if(avg>=70){
+      //       return "미입니다.";
+      //     }else if(avg>=60){
+      //       return "양입니다.";
+      //     }else{
+      //       return "가입니다.";
+      //     }  
+      //     return str;        
+      //   }
+      // };
+
+      // grade.kor = Number(prompt("국어점수를 입력하시오."));
+      // grade.eng = Number(prompt("영어점수를 입력하시오."));
+      // grade.math = Number(prompt("수학점수를 입력하시오."));
+
+      // document.write("총점 : " + grade.getTotal() + "점<br>");
+      // document.write("평균 : " + grade.getAvg() + "점<br>");
+      // document.write("등급 : " + grade.getGrade() + "<br>");
+
+      // var objNation = {
+      //   nation : "Korea", 
+      //   capital : "Seoul",
+      //   language : "Korean",
+      //   population : 51000
+      // }
+
+      // document.write( objNation.nation + "<br>");
+      // document.write( objNation["nation"] + "<br>");
+
+      // document.write( objNation.population + "<br>");
+      // document.write( objNation["population"] + "<br>");
+
+
+      // var print = "";
+
+      // for(var key in objNation){//String 형태로 넘어감
+      //   print = print + key + ":" + objNation[key] + "\n";
+
+      // }
+
+      // document.write( print + "<br>");
+
+      //객체에 속성 추가 및 삭제
+      var person = {
+        name : "Hong",
+        nation : "Korea",
+        gender : "men",
+        char : "good"
+      }
+      var print = "";
+
+      for(var key in person){//String 형태로 넘어감
+        print = print + key + ":" + person[key] + "<br>";
+      }
+
+      document.write(print + "<br>");
+      document.write( "<hr>");
+
+      //속성 추가
+      person.talent = "fencing"
+      print = "";
+
+      for(var key in person){//String 형태로 넘어감
+        print = print + key + ":" + person[key] + "<br>";
+      }
+
+      document.write(print + "<br>");
+      document.write( "<hr>");
+
+      //속성 삭제
+      delete person.talent;
+      print = "";
+
+      for(var key in person){//String 형태로 넘어감
+        print = print + key + ":" + person[key] + "<br>";
+      }
+
+      document.write( print + "<br>");
+      document.write( "<hr>");
+
+      //in 키워드
+      document.write(("nattion" in person) + "<br>");
+      document.write(("nation" in person) + "<br>");
+      document.write( "<hr>");
+
+      //with 키워드
+      with(person){
+        document.write( name + "<br>");
+        document.write( nation + "<br>");
+        document.write( gender + "<br>");
+        document.write( char + "<br>");
+      }
+
+
+
+
+
+
+      // var objArea = {
+      //   width : 0,
+      //   height : 0,
+      //   triangle : function (){
+      //     return (this.width*this.height) / 2.0;
+      //   },
+
+      //   rectangle : function (){
+      //     return (this.width*this.height);
+      //   },
+
+      //   circle : function (){
+      //     return (this.width*this.width*Math.PI);
       //   }
       // }
 
-      // document.write(objCar.speed(2)+"<br>")
+      // objArea.width = Number(prompt("가로"));
+      // objArea.height = Number(prompt("세로"));
 
-      // var kor = Number(prompt("국어점수를 입력하시오."));
-      // var eng = Number(prompt("영어점수를 입력하시오."));
-      // var math = Number(prompt("수학점수를 입력하시오."));
-
-      // var grade = {
-      //   total: function (kor, eng, math) {
-      //     return kor + eng + math;
-      //   },
-      //   avg: function (kor, eng, math) {
-      //     return (kor + eng + math) / 3.0;
-      //   },
-      // };
-
-      // document.write("총점 : " + grade.total(kor, eng, math) + "점<br>");
-      // document.write("평균 : " + grade.avg(kor, eng, math) + "점<br>");
-
-      var grade = {
-        kor: 0,
-        eng: 0,
-        math: 0,
-        getTotal: function (kor, eng, math) {
-          return this.kor + this.eng + this.math;
-        },
-        getAvg: function (kor, eng, math) {
-          return this.getTotal()/ 3.0;
-        },
-        getGrade: function () {
-          var avg = this.getAvg();
-          var str = "가 입니다."
-
-          if(avg>=90){
-            return "수입니다.";
-          }else if(avg>=80){
-            return "우입니다.";
-          }else if(avg>=70){
-            return "미입니다.";
-          }else if(avg>=60){
-            return "양입니다.";
-          }else{
-            return "가입니다.";
-          }  
-          return str;        
-        }
-      };
-
-      grade.kor = Number(prompt("국어점수를 입력하시오."));
-      grade.eng = Number(prompt("영어점수를 입력하시오."));
-      grade.math = Number(prompt("수학점수를 입력하시오."));
-
-      document.write("총점 : " + grade.getTotal() + "점<br>");
-      document.write("평균 : " + grade.getAvg() + "점<br>");
-      document.write("등급 : " + grade.getGrade() + "<br>");
+      // document.write("삼각형넓이 : " + objArea.triangle() + "<br>");
+      // document.write("사각형넓이 : " + objArea.rectangle() + "<br>");
+      // document.write("원넓이 : " + objArea.circle() + "<br>");
 
 
+      
 
 
 
