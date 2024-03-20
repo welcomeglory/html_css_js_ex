@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // //getter, setter 함수(정보은닉)
+      // function BMICalculator(height,weight){
+      //    this.height = height;
+      //    this.weight = weight;
+      //    this.bmi = function(){
+      //     return (this.weight/ (this.height*this.height)).toFixed(2);
+      //    }
+      // }
+      
+      // var myBMI = new BMICalculator(1.9,90);
+      // document.write(myBMI.bmi()+"<br>")
+
+      // document.write("<hr>")
+
+      // function BMICalculator2(height,weight){         
+      //   var height = 0;
+      //   var weight = 0;
+      //   this.bmi = function(){
+      //     return (this.weight/ (this.height*this.height)).toFixed(2);
+      //    }
+
+      //    //getter,setter
+      //    this.getHight = function(){
+      //     return this.height;
+      //    }
+      //    this.setHight = function(height){
+      //     if(isNaN(height)){//Not a Number
+      //       document.write("숫자가 아닙니다.<br>");
+      //     }else{
+      //       this.height = height;
+      //     }
+      //    }
+        
+      //    this.getWeight = function(){
+      //     return this.weight;
+      //    }
+      //    this.setWeight = function(weight){
+      //     if(isNaN(weight)){//Not a Number
+      //       document.write("숫자가 아닙니다.<br>");
+      //     }else{
+      //       this.weight = weight;
+      //     }
+      //    }
+      // }
+
+      // myBMI = new BMICalculator2();
+      // myBMI.setHight(1.9);
+      // myBMI.setWeight(90);
+
+      // console.log(myBMI.bmi());
+
+      function Circle(radius){
+        var radius = 0;
+        this.getRaius = function(){
+          return this.radius=radius;
+        }
+        this.setRaius = function(radius){
+          if(isNaN(radius)){//Not a Number
+            document.write("숫자가 아닙니다.<br>");
+          }else{
+          return this.radius=radius;
+          }
+        }
+        this.getArea = function(){
+          document.write("원넓이 : "+(this.radius*this.radius*Math.PI));
+        }
+      }
+      function Rectangle(width,height){
+        var width = 0;
+        var height = 0;
+        this.getWidth = function(){
+          return this.width=width;
+        }
+        this.setWidth = function(width){
+          if(isNaN(width)){//Not a Number
+            document.write("숫자가 아닙니다.<br>");
+          }else{
+          return this.width=width;
+          }
+        }
+        this.getHeight = function(){
+          return this.height=height;
+        }
+        this.setHeight = function(height){
+          if(isNaN(height)){//Not a Number
+            document.write("숫자가 아닙니다.<br>");
+          }else{
+          return this.height=height;
+          }
+        }
+        this.getArea = function(){
+          document.write("사각형넓이 : "+(this.width*this.height));
+        }
+      }
+
+
+
+
+      var circle = new Circle();
+      circle.setRaius(10);
+      circle.getArea(); //원넓이 출력
+      
+      document.write("<hr>")
+      var rec = new Rectangle();
+      rec.setWidth(10);
+      rec.setHeight(10);
+      rec.getArea(); //사각형넓이 출력
+
+
+
+
+
+      
+
+    </script>
+  </head>
+  <body></body>
+</html>

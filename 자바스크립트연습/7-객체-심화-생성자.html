@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //생성자를 이용한 객체 생성,생성자 함수
+      // function Airplane(name, color, speed){
+      //   this.name = name;
+      //   this.color = color;
+      //   this.speed = speed;
+      //   this.fly = function(){
+      //     return this.speed + "_fly!";
+      //   }
+      //   //return this;
+      // }
+
+      // Airplane();
+      // console.log(typeof (new Airplane()));
+
+      // //new Airplane("boeing747","blue/white","600km/h"); <= 객체생성
+      // //new + 함수 => object(객체) = {} : 함수를 형변환 시켜서 객체로 만듦
+      // var boeing747 = new Airplane("boeing747","blue/white","600km/h");
+  //     // document.write(boeing747.name+ "<br>");
+  //     // document.write(boeing747.color+ "<br>");
+  //     // document.write(boeing747.speed+ "<br>");
+  //     // document.write(boeing747.fly()+ "<br>");
+
+  //     // //헛갈리는 포인트
+  //     // // 1. 일반 함수 호출과 함수를 new 했을때의 차이
+  //     // function abc(){
+  //     //   console.log("");
+  //     // }
+
+  //     // abc();
+
+  //     // console.log(typeof abc);//function
+
+  //     // var constructor = new abc();
+
+  //     // console.log(typeof (new abc()));//object
+
+  //     // // 생성자함수 이름의 첫 글자는 대문자로 시작
+  //     // // 속성(property)은 this.으로 정의
+  //     // // 반드시 'new' 연산자를 붙여 실행
+  //     // function User(name){
+  //     //    // this = {};  (빈 객체가 암시적으로 만들어짐)
+  //     //   this.name = name;
+
+  //     //   //return this;(this가 암시적으로 변환됨)
+  //     // }
+
+  // //     // // let user = {name :"홍길동"}
+
+  // //     // let user = new User("홍길동");
+  // //     // Document.write(user.name)
+
+  // //     function Grade(kor, eng, math) {
+  // //       this.kor = kor;
+  // //       this.eng = eng;
+  // //       this.math = math;
+  // //       this.getTotal = function () {
+  // //         return this.kor + this.eng + this.math;
+  // //       };
+  // //       this.getAvg = function () {
+  // //         return this.getTotal() / 3.0;
+  // //       };
+  // //       this.getGrade = function () {
+  // //         var avg = this.getAvg();
+  // //         var str = "가 입니다.";
+
+  // //         if (avg >= 90) {
+  // //           return "수입니다.";
+  // //         } else if (avg >= 80) {
+  // //           return "우입니다.";
+  // //         } else if (avg >= 70) {
+  // //           return "미입니다.";
+  // //         } else if (avg >= 60) {
+  // //           return "양입니다.";
+  // //         } else {
+  // //           return "가입니다.";
+  // //         }
+  // //         return str;
+  // //       };
+  // //     }
+
+  // //     let 철수 = new Grade(70, 80, 90);
+  // //     document.write(철수.getAvg() + "<br>");
+  // //     document.write(철수.getGrade() + "<br>");
+
+  // //     let 바둑이 = new Grade(70, 80, 90);
+  // //     document.write(바둑이.getAvg() + "<br>"); //80
+  // //     document.write(바둑이.getGrade() + "<br>"); //우입니다.
+
+  // //     function User(name) {
+  // //       this.sayHi = function () {
+  // //         document.write("제 이름은 " + name + "입니다." + "<br>");
+  // //       };
+  // //     }
+
+  // //     let bora = new User("보라");
+  // //     bora.sayHi(); // 제 이름은 보라입니다.
+
+  // //     let minji = new User("민지");
+  // //     minji.sayHi();
+
+  // //     /*
+  // //  prototype(프로토타입)
+  // //  */
+
+  // //     function Scoring(player, scoreFirst, scoreSecond, scoreThird) {
+  // //       this.player = player;
+  // //       this.scoreFirst = scoreFirst;
+  // //       this.scoreSecond = scoreSecond;
+  // //       this.scoreThird = scoreThird;
+
+  // //       this.getTotal = function () {
+  // //         return this.scoreFirst + this.scoreSecond + this.scoreThird;
+  // //       };
+  // //       //toFixed() 메서드는 고정 소수점 표현법
+  // //       //toFixed(3) : xx.123 까지 표현
+  // //       this.getAvg = function () {
+  // //         return (this.getTotal() / 3).toFixed(3);
+  // //       };
+  // //     }
+
+
+
+  // //     var hong = new Scoring("홍길동", 99, 90, 92);
+  // //     document.write(hong.player + "의 총점" + hong.getAvg());
+  // //     document.write("<hr>");
+
+  // //     document.write(hong.player + "의 총점" + hong.getTotal());
+
+  // //     document.write("<hr>");
+
+  //     function Scoring2(player, scoreFirst, scoreSecond, scoreThird) {
+  //       this.player = player;
+  //       this.scoreFirst = scoreFirst;
+  //       this.scoreSecond = scoreSecond;
+  //       this.scoreThird = scoreThird;
+
+
+
+  //       // this.getTotal = function () {
+  //       //   return this.scoreFirst + this.scoreSecond + this.scoreThird;
+  //       // };
+  //       // //toFixed() 메서드는 고정 소수점 표현법
+  //       // //toFixed(3) : xx.123 까지 표현
+  //       // this.getAvg = function () {
+  //       //   return (this.getTotal() / 3).toFixed(3);
+  //       // };
+  //     }
+
+  //     Scoring2.prototype.getTotal = function(){
+  //       return this.scoreFirst + this.scoreSecond + this.scoreThird;
+  //     }
+  //     Scoring2.prototype.getAvg = function(){
+  //       return (this.getTotal() / 3).toFixed(3);
+  //     }
+
+  //     var hong2 = new Scoring2("홍길동", 99, 90, 92);
+  //     document.write(hong2.player + "의 총점" + hong2.getAvg());
+  //     document.write("<hr>");
+
+  //     document.write(hong2.player + "의 총점" + hong2.getTotal());
+
+  //     document.write("<hr>");
+      
+      function Grade2(kor, eng, math) {
+        var kor = 0;
+        var eng = 0;
+        var math = 0;
+
+        //getter,setter
+        this.getKor = function(){
+          return this.kor;
+         }
+         this.setKor = function(kor){
+          if(kor<0||kor>100){
+            document.write("잘못 입력하셨습니다.<br>");
+          }else{
+            this.kor = kor;
+          }
+         }
+        
+        this.getEng = function(){
+          return this.eng;
+         }
+         this.setEng = function(eng){
+          if(eng<0||eng>100){
+            document.write("잘못 입력하셨습니다.<br>");
+          }else{
+            this.eng = eng;
+          }
+         }
+
+         this.getMath = function(){
+          return this.math;
+         }
+         this.setMath = function(math){
+          if(math<0||math>100){
+            document.write("잘못 입력하셨습니다.<br>");
+          }else{
+            this.math = math;
+          }
+         }
+
+        this.getTotal = function () {
+          return this.kor + this.eng + this.math;
+        };
+        this.getAvg = function () {
+          return this.getTotal() / 3.0;
+        };
+        this.getGrade = function () {
+          var avg = this.getAvg();
+          var str = "가 입니다.";
+
+          if (avg >= 90) {
+            return "수입니다.";
+          } else if (avg >= 80) {
+            return "우입니다.";
+          } else if (avg >= 70) {
+            return "미입니다.";
+          } else if (avg >= 60) {
+            return "양입니다.";
+          } else {
+            return "가입니다.";
+          }
+          return str;
+        };
+      }
+
+      let 철수 = new Grade2();
+      철수.setKor(101); //- or 100초과 숫자에 대해서는 잘못된 입력입니다.
+      철수.setEng(-80);
+      철수.setMath(-9);
+
+      document.write(철수.getTotal() + "<br>");
+      document.write(철수.getAvg() + "<br>");
+      document.write(철수.getGrade() + "<br>");
+
+
+
+    </script>
+  </head>
+  <body></body>
+</html>
