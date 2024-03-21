@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // //String 객체
+      // var strEn = "ABCDE";
+      // var strKo = new String("가나다라마바사");
+      // String.prototype.temp = 123;
+
+      // document.write(strEn + "<br>")
+      // document.write(strKo + "<br>")
+
+      // document.write(strEn.length + "<br>")
+      // document.write(strKo.length + "<br>")
+
+      // document.write(strEn.temp + "<br>")
+      // document.write(strKo.temp + "<br>")
+
+      // document.write(typeof strEn + "<br>")
+      // document.write(typeof strKo + "<br>")
+
+      // document.write(strEn.charAt(3) + "<br>")
+      // document.write(strEn.indexOf("E") + "<br>")
+      // document.write(strEn.lastIndexOf("D") + "<br>")
+      // document.write(strEn.lastIndexOf("E") + "<br>")
+      // document.write(strEn.concat("abcde") + "<br>")
+      // document.write(strEn.replace("A","a") + "<br>")
+      // document.write(strEn.split("A") + "<br>")
+      // document.write(strEn.slice(2,4) + "<br>")
+
+      // var lower = strEn.toLowerCase();//소문자
+      // document.write(lower + "<br>")
+      // var upper = strEn.toUpperCase();//소문자
+      // document.write(upper + "<br>")
+
+      // if(strEn == strKo){
+      //   document.write("같다"+"<br>")
+      // }else{
+      //   document.write("다르다"+"<br>")
+      // }
+
+      // if(strEn == "ABCDE"){
+      //   document.write("같다"+"<br>")
+      // }else{
+      //   document.write("다르다"+"<br>")
+      // }
+
+      // if(strEn === "ABCDE"){//????
+      //   document.write("같다"+"<br>")
+      // }else{
+      //   document.write("다르다"+"<br>")
+      // }
+
+      // // == 와 === 의 차이
+      // var a =1;
+      // var b= "1";
+      // document.write((a==b) +"<br>")// 데이터타입을 따지지않고 비교
+      // document.write((a===b) +"<br>")// 데이터타입을 따져서 비교
+
+      /*
+    Math 객체
+   */
+      var num1 = 123.456;
+      var num2 = -123.456;
+      var num3 = 3;
+
+      console.log("Math.PI", Math.PI);
+      console.log("Math.abs()", Math.abs(num2));
+      console.log("Math.max()", Math.max(num1, num2));
+      console.log("Math.min()", Math.min(num1, num2));
+      console.log("Math.pow()", Math.pow(num3, 3));
+      console.log("Math.random()", Math.random());
+      console.log("Math.ceil()", Math.ceil(num1)); // 올림
+      console.log("Math.floor()", Math.floor(num1)); // 버림
+      console.log("Math.round()", Math.round(num1)); // 반올림
+      console.log("Math.sqrt", Math.sqrt(3));
+
+      //현재 년,월,일,요일,시,분,초
+      function clock() {
+        var today = new Date();
+        var year = today.getFullYear();
+        var month = today.getMonth() + 1; // 월은 0부터 시작하므로 1을 더해줍니다.
+        var day = today.getDate();
+        var dayIndex = today.getDay();
+        var dayArr = new Array("일", "월", "화", "수", "목", "금", "토");
+        var dayName = dayArr[dayIndex];
+
+        var hours = today.getHours();
+        var minutes = today.getMinutes();
+        var seconds = today.getSeconds();
+
+        document.body.innerHTML =
+          year +
+          "년 " +
+          month +
+          "월 " +
+          day +
+          "일 " +
+          dayName +
+          "요일 " +
+          hours +
+          "시 " +
+          minutes +
+          "분 " +
+          seconds +
+          "초";
+      }
+      setInterval(clock, 1000);
+    </script>
+  </head>
+  <body></body>
+</html>

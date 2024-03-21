@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //set 내장 객체
+      //1. js lotto 구현
+      // function GetLottoNumbers(num) {
+      //   var numbers = new Set();
+      //   while (numbers.size < num) {
+      //     var lottonumber = Math.floor(Math.random() * 45) + 1;
+      //     numbers.add(lottonumber);
+      //   }
+      //   return Array.from(numbers);
+      // }
+
+      // var lottoNumbers = GetLottoNumbers(6);
+      // console.log(lottoNumbers)      
+      
+      //2.
+      function Lotto(){
+        this.nums = new Set();//중복없이 번호생성
+        this.getNums = function(){
+          //set의 사이즈가 6개가되면 빠져나오는 반복문
+          while(this.nums.size < 6){
+            this.nums.add(parseInt(Math.random()*45)+1)//1~45            
+          }
+          return this.nums;
+        }
+      }
+
+      var lotto = new Lotto();
+      console.log(lotto.getNums());
+
+      for(var num of lotto.getNums()){
+        document.write(num + "<br>" );
+      }
+
+    </script>
+  </head>
+  <body></body>
+</html>
