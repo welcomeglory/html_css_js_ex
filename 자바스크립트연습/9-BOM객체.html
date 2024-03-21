@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //window 객체
+        // window.alert("윈도우 객체");
+        // window.console.log("윈도우 객체")
+
+        // var newWindow = window.open("http://www.google.com", "openWindow", "width=1000, height=500");
+
+        // //위치조정
+        // newWindow.moveTo(50,50);
+
+        // for(var i=0; i <1000; i++){
+        //     newWindow.moveBy(1,1);
+        // }
+
+        // //사이즈조정
+        // newWindow.resizeTo(500,600);
+
+        // for(var i=0; i <200; i++){
+        //     newWindow.resizeBy(-1,-1);
+        // }
+
+        //BODY태그에 있는 내용을 메모리로 다 올린 젤 마지막에 실행된다. 
+        //호출된 웹문서가 모두 완료된 후 자동으로 실행.
+        window.onload = function(){
+            
+             location.href = "http://www.naver.com"; //히스토리에 기록된다.
+        //location.replace("http://www.naver.com");// 히스토리에 기록되지 않는다.현재 페이지를 새로운 페이지로 덮어씌우는 것.
+        }
+        
+        
+        // window.onload = function(){
+        //     console.log("first");
+        // }
+
+        // function openWin(url, width, height){
+        //     console.log(screen,width);
+        //     console.log(screen,height);
+
+        //     //화면 정중앙에 위치시킴
+        //     var left = screen.width/2 - width/2;
+        //     var top = screen.height/2 - height/2;
+
+        //     var opt = "width = " + width + ", height = " + height + ", left = " + left + ", top = " + top;
+        //     open(url,"newWin",opt)
+        //     console.log(opt);
+
+        // }
+
+        // openWin("http://www.naver.com",800,500)
+
+
+
+        </script>
+</head>
+<body>    
+    <script>
+        console.log("SECOND");
+    </script>
+    <script>
+        console.log("THIRD");
+    </script>
+
+</body>
+</html>

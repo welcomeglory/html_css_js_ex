@@ -5,25 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        var arr = new Array(1,2,3,4);
-        document.write(arr[0] + "<br>");
-        document.write(arr[1] + "<br>");
-        document.write(arr[2] + "<br>");
-        document.write(arr[3] + "<br>");
+        //Array객체
+        // var arr1 = new Array("박용택", "이승엽", "정상호", "한기주", "장원삼");
+        // var arr2 = new Array("손승락", "이호준", "박세웅", "해커", "윤호슬");
+        // var arr3 = new Array(1,6,3,5,4,2);
 
-        arr = ["a","b","c","d"];
-        // arr = {"a","b","c","d"}; 자바에서는 {}
+        // // document.write(arr1.length +"<br>");
+        // // document.write(arr1.join() +"<br>"); //
+        // // // document.write(typeof(arr1.join()) +"<br>"); //
+        // // // document.write(typeof arr1 +"<br>"); //
+        // // // document.write(typeof(arr3.join()) +"<br>"); //
+        // // // document.write(typeof(arr1[0])+"<br>"); //
 
-        document.write(arr[0] + "<br>");
-        document.write(arr[1] + "<br>");
-        document.write(arr[2] + "<br>");
-        document.write(arr[3] + "<br>");
+        // // document.write(arr3.reverse() +"<br>"); //거꾸로
+        // // document.write(arr1.reverse() +"<br>"); // reverse()는 원본을 변형.(가변함수)
+        // // document.write(arr1 +"<br>"); //데이터 변경
 
-        arr = ["a",1,{},undefined];
-        document.write(arr[0] + "<br>");
-        document.write(arr[1] + "<br>");
-        document.write(arr[2] + "<br>");
-        document.write(arr[3] + "<br>");
+        // // document.write(arr3.sort() +"<br>"); //정렬,가변함수
+        // // document.write(arr3 +"<br>"); //데이터 변경
+        
+        // // document.write(arr3.slice(2,3) +"<br>"); // 뽑아내기,단순출력,불변함수
+
+        // // var arr4 = new Array(1,6,3,5,4,2);
+
+        // // document.write(arr4.sort(function(a,b){return a-b}));//오름차순
+        // // document.write("<hr>")
+        // // document.write(arr4.sort(function(a,b){return b-a}));//내림차순
+
+        // //크기를 지정하지 않은 배열 객체 생성
+        // var varArr1 = new Array();
+        // //push()
+        // varArr1.push("가나다","마바사");//추가 push()함수
+
+        // document.write(varArr1+"<br>");
+
+        // //배열의 맨 앞에 값을 제거한다.
+        // document.write("varArr1.shift() = "+varArr1.shift()+"<br>");//shift()       
+        // document.write(varArr1+"<br>");
+
+        // //배열의 맨 끝에 값을 제거한다.
+        // document.write("varArr1.pop() = "+varArr1.pop()+"<br>");//pop()       
+        // document.write(varArr1+"<br>");
+
+        // //크기를 지정한 배열 객체 생성
+        // var varArr2 = new Array(5);
+
+        // //배열 생성과 데이터저장을 동시에
+        // var varArr3 = new Array(123,"ABC",true,function fun(){},{},undefined);
+
+        //  //배열 생성과 데이터저장을 동시에
+        // varArr4 = [123,"ABC",true,function fun(){},{},undefined];
+
+        // console.log(varArr1);
+        // console.log(varArr2);
+        // console.log(varArr3);
+        // console.log(varArr4);  
+
+        var arrFor = [1,2,3];
+
+        // for(var i=0; i < arrFor.length; i++){
+        //     console.log(arrFor[i]);
+        // }
+
+        //값을 넘겨주는게 아니라 인덱스를 넘겨줌
+        for(var i of arrFor){
+            console.log("for 구문" +i)
+        };
+
+        arrFor.forEach(function(num){
+            console.log("foreach 구문" +num)
+
+        });
+
+        // var arr = new Array(1,2,3,4);
+        // document.write(arr[0] + "<br>");
+        // document.write(arr[1] + "<br>");
+        // document.write(arr[2] + "<br>");
+        // document.write(arr[3] + "<br>");
+
+        // arr = ["a","b","c","d"];
+        // // arr = {"a","b","c","d"}; 자바에서는 {}
+
+        // document.write(arr[0] + "<br>");
+        // document.write(arr[1] + "<br>");
+        // document.write(arr[2] + "<br>");
+        // document.write(arr[3] + "<br>");
+
+        // arr = ["a",1,{},undefined];
+        // document.write(arr[0] + "<br>");
+        // document.write(arr[1] + "<br>");
+        // document.write(arr[2] + "<br>");
+        // document.write(arr[3] + "<br>");
 
 
 

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        window.onload = function(){
+        // // //p태그 생성
+        // var element = document.createElement("p");
+        // var text = document.createTextNode("자바스크립트");
+        
+        // element.appendChild(text);
+        // document.body.appendChild(element);
+
+
+        // var str = "<p>자바스크립트</p>";
+        // str += "<img src = 'https://i.namu.wiki/i/SaRlr3Zok77191wBOneH71naXei8kfaGs1jNTawUz03C3K4Ii-qEPtH8PPhRR_m2V9ThKTh6XCvp56WZhoOPPD2bFhXYKucEUJU8lOze_nGjP50FZxTE-usXBTOi6D1EYlFFLF9NO-jDlypg1QDAlA.webp'>";
+
+        // document.body.innerHTML = str;
+
+        // document.body.innerHTML = "<p>아아아</p>";//두 번째 설정에서는 첫 번째 설정된 HTML 내용이 완전히 대체됩니다.
+
+        //element는 태그
+        // var title  = document.getElementById("title");
+        // title.innerHTML = "<h1>아아아</h1>";
+
+        // var puppy  = document.getElementById("puppy");
+        // puppy.setAttribute("src","https://i.namu.wiki/i/SaRlr3Zok77191wBOneH71naXei8kfaGs1jNTawUz03C3K4Ii-qEPtH8PPhRR_m2V9ThKTh6XCvp56WZhoOPPD2bFhXYKucEUJU8lOze_nGjP50FZxTE-usXBTOi6D1EYlFFLF9NO-jDlypg1QDAlA.webp");
+        // puppy.setAttribute("width",170);
+        // puppy.setAttribute("height",200);
+
+        // var ptag = document.getElementsByTagName("p");
+
+        // for(let tag of ptag){
+        // tag.innerHTML = "<h1>호호호호</h1>";
+        // }
+        var ptag = document.getElementsByClassName("list");
+
+        for(let tag of ptag){
+        tag.innerHTML = "<h1>포도</h1>";
+        }
+    }
+    </script>
+</head>
+
+<body> 
+    <img id = "puppy">
+    <p id="title">아아아</p>  
+    <p>후후후</p>  
+
+    <ul>
+        <li class="list">우유</li>
+        <li class="list">바나나</li>
+        <li class="list">오렌지</li>
+    </ul>
+
+    <!-- var title  = document.getElementById("title");
+    title.innerHTML = "<h1>아아아</h1>"; 실행되면 아래와 같이 실행-->
+    <!-- <p id="title"><h1>아아아</h1></p> -->
+
+    <!-- <script>//p태그 생성
+        var element = document.createElement("p");
+        var text = document.createTextNode("자바스크립트");
+        
+        element.appendChild(text);
+        document.body.appendChild(element);
+        </script> -->
+   
+</body>
+</html>

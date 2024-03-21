@@ -29,10 +29,13 @@
           }
           return this.nums;
         }
+        this.getColor = function(num) {
+          return blue;
+        }
       }
 
       var lotto = new Lotto();
-      console.log(lotto.getNums());
+      var numbers = lotto.getNums();
 
       for(var num of lotto.getNums()){
         document.write(num + "<br>" );
@@ -40,5 +43,7 @@
 
     </script>
   </head>
-  <body></body>
+  <body>
+
+  </body>
 </html>

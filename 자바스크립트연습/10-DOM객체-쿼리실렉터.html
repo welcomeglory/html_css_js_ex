@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            // var selected = document.querySelector("h1");
+            // selected.style.color ="red";
+
+            // selected = document.querySelector(".h2");
+            // selected.style.color ="blue";
+
+            // selected = document.querySelector("#h3");
+            // selected.style.color ="orange";
+
+            
+            // selected = document.querySelector("div span");
+            // selected.style.color ="purple";
+            
+            // selected = document.querySelector("div span:last-child");
+            // selected.style.color ="orange";
+            
+            // selected = document.querySelector("div span:first-child");
+            // selected.style.color ="green";
+            
+
+            //삭제방법
+            // 1번째 방법
+            var selected = document.querySelector("#top");
+            selected.innerHTML = "";
+
+            // 2번째 방법
+            var parent = document.querySelector("#top");
+            var child = document.querySelector("#down");
+            // parent.removeChild(child);
+
+            // 3번째 방법
+            child.remove();
+
+
+
+        };
+    </script>
+</head>
+
+<body>
+    <div id="top">
+        <div id="down">자식</div>
+    </div>
+    
+
+    <h1>h1</h1>
+    <h2 class="h2">h2</h2>
+    <h3 id="h3">h3</h3>
+    <h3>h3_2</h3>
+    <div>
+        <span>Span1</span>
+        <span>Span2</span>
+    </div>
+   
+</body>
+</html>
