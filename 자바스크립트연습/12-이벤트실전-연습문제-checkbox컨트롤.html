@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //체크박스 선택 결과 출력
+      function show() {
+        //document.querySelector("");는 무조건 여러 개중에 한개만 가져옴
+        var checkArr = document.querySelectorAll("input[name='hobby']");
+        // var checkArr = document.getElementById("hobby");
+        // var checkArr = document.getElementsByTagName("input");
+        //셋 다 동일 결과
+        var html = "";
+        for (var check of checkArr) {
+          console.log(check.checked + ":" + check.value);
+          if (check.checked) {
+            html = html + check.value + "<br>";
+          }
+        }
+        document.getElementById("result").innerHTML = html;
+      }
+    </script>
+  </head>
+  <body>
+    취미<br />
+    <ul>
+      <li>야구<input type="checkbox" name="hobby" value="야구" /></li>
+      <li>농구<input type="checkbox" name="hobby" value="농구" /></li>
+      <li>게임<input type="checkbox" name="hobby" value="게임" /></li>
+    </ul>
+    <button onclick="show()">결과보기</button><br />
+    결과값:
+    <div id="result"></div>
+  </body>
+</html>

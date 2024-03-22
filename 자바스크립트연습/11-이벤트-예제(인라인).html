@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cEvent,#cEvent2{
+            width:200px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 1.2em;
+            background-color: #f00;
+            color : #fff;
+            font-weight: bold;
+        }
+        #cEvent2{
+            margin-top: 50px;
+        }
+    </style>
+    <script>
+       window.onload = function(){
+        var cEvent2 = document.querySelector("#cEvent2");
+        // cEvent2.onclick = function(){
+        //     console.log("이벤트2")
+        // }
+        function clickHandler(){
+            console.log("이벤트2")
+        }
+        cEvent2.onclick = clickHandler;
+       }
+    </script>
+</head>
+<body> 
+    <!--인라인 방식: 태그안에 특정동작과 함수를 다이렉트로 적어 주는것-->
+    <div id="cEvent" onclick="headerClick()">click Event</div>
+
+    <div id="cEvent2">click Event2</div>
+
+    
+</body>
+<script>
+    function headerClick(){
+        // alert("빠잉~");
+        console.log("hello")
+
+        //이벤트 제거
+        var ce = document.querySelector("#cEvent")
+        ce.onclick = null;
+    }
+
+</script>
+</html>

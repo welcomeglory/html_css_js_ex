@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // function list(){
+      // var item = document.getElementById("item").value;
+      // var html = html+'<li>'+item +'<li>';
+      // document.getElementById("itemList").innerHTML = html;
+      // }
+      window.onload = function () {
+        // 이전에 입력된 리스트 가져오기
+        var savedList = localStorage.getItem("itemList");
+        if (savedList) {
+          document.getElementById("itemList").innerHTML = savedList;
+        }
+      };
+
+      function list() {
+        // 입력된 항목 가져오기
+        var newItem = document.getElementById("item").value.trim();
+
+        // 입력된 항목이 비어있는지 확인
+        if (newItem === "") {
+          alert("입력된 항목이 없습니다.");
+          return;
+        }
+
+        // 리스트에 새로운 요소 추가
+        document.getElementById("itemList").innerHTML += "<li>" + newItem + "</li>";
+
+        // 입력한 리스트를 로컬 스토리지에 저장
+        localStorage.setItem("itemList",document.getElementById("itemList").innerHTML);
+
+        // 입력 박스 초기화
+        document.getElementById("item").value = "";
+      }
+    </script>
+  </head>
+  <body>
+    <body>
+      <form>
+        <input type="text" id="item" autofocus="true" />
+        <button onclick="list()">추가</button><br />
+        <div id="itemList"></div>
+      </form>
+    </body>
+  </body>
+</html>

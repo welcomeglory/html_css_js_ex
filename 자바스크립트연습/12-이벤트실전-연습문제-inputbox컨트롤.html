@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 인라인 모델 -->
+    <script>
+    //   증감버튼
+      function up() {
+        //input의 value값 변경
+        var input = document.querySelector("#textbox");
+        input.value = parseInt(input.value)+1;
+      }
+      function down() {
+        //input의 value값 변경
+        var output = document.querySelector("#textbox");
+        output.value = parseInt(output.value)-1;
+      }
+    </script>
+  </head>
+  <body>
+    갯수<input type="text" name="quantity" id="textbox" value="1" />
+    <button id="up" onclick="up()">+</button>
+    <button id="down" onclick="down()">-</button>    
+  </body>
+</html>

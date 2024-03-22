@@ -5,11 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-
+        // window.onload 반드시 콜백함수가 필요!!!
+        window.onload = function(){
+        var ptag = document.querySelector("#company");
+        //var ptag = document.getElementById("company");
+        ptag.style.fontSize = "1.2em";
+        ptag.style.border = "1px solid #ff0000";
+        }
     </script>
 </head>
 <body> 
-  
-   
+    <footer>
+        <hr>
+        <p id="company">© Company 2022-2023</p>
+    </footer>   
 </body>
 </html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var sbmBtn = document.querySelector("#sbmBtn");
+            //기본모델
+            sbmBtn.onclick = function(){
+                //유효성 검사
+                if(document.getElementById("uId").value == ""){
+                    alert("user id blank");
+                }else if(document.getElementById("uPw").value == ""){
+                    alert("password blank");
+                }else{
+                    alert("login ok!!!");
+                    document.getElementById("loginForm").submit();
+                }
+            }
+        }        
+    </script>
+</head>
+<body> 
+    <!-- form안의 정보를 action으로 보낸다. -->
+    <form id="loginForm" action="http://www.google.com">
+        USER ID : <input id="uId" type="text" name="uId"><br>
+        USER PW : <input id="uPw" type="password" name="upw"><br>
+        <input id="sbmBtn" type="button" value="SUBMIT">
+        <input id="resBtn" type="button" value="RESET">
+    </form>
+</body>
+</html>

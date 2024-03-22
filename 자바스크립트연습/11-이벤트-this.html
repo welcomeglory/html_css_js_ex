@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <head>
+		<title>JavaScript</title>		
+		<script>		
+			window.onload = function(event) {
+				function addHandler(){
+					console.log("click event");
+					console.log(this);//호출한 놈
+					console.log(event)
+					//배경색 blue로 변경
+					this.style.backgroundColor = "blue";
+				}
+				var objDiv = document.getElementById("objDiv");
+				//이벤트 등록
+				objDiv.addEventListener("click",addHandler);
+
+				var objPar = document.getElementById("objPar");
+				//이벤트 등록
+				objPar.addEventListener("click",addHandler);
+
+			};			
+		</script>		
+		<style>
+			#objDiv {
+				width: 200px; height: 100px;
+				line-height: 100px;
+				text-align: center;
+				font-size: 1.2em;
+				background-color: #f00;
+				color: #fff;
+				font-weight: bolder;
+			}
+			
+			#objPar {
+				width: 200px; height: 100px;
+				line-height: 100px;
+				text-align: center;
+				font-size: 1.2em;
+				background-color: #0f0;
+				color: #fff;
+				font-weight: bolder;
+			}
+		</style>
+	</head>	
+	<body>	
+		<div id="objDiv">Object Division</div>
+		<p id="objPar">Object Paragraph</p>
+	</body>
+
+</html>

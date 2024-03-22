@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var form = document.querySelector("#loginForm");
+            //
+            form.onsubmit = function(){
+                //유효성 검사
+                if(document.getElementById("uId").value == ""){
+                    alert("user id blank");
+                    return false;
+                }else if(document.getElementById("uPw").value == ""){
+                    alert("password blank");
+                    return false;
+                }else{
+                    alert("login ok!!!");
+                    document.getElementById("loginForm").submit();
+                    return true;
+                }
+            }
+        }        
+    </script>
+</head>
+<body> 
+    <!-- form안의 정보를 action으로 보낸다. -->
+    <form id="loginForm" action="http://www.google.com">
+        USER ID : <input id="uId" type="text" name="uId"><br>
+        USER PW : <input id="uPw" type="password" name="upw"><br>
+        <!-- submit을 클릭하면 -->
+        <input id="sbmBtn" type="submit" value="SUBMIT">
+        <input id="resBtn" type="reset" value="RESET">
+    </form>
+</body>
+</html>
