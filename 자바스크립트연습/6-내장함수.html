@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+    //  //내장함수
+    //  alert("내장함수");
+    //  console.log("함수")
+
+    // //eval 함수 - 문자열을 코드(소스)로 이용(실행)
+    // var varEval = "console.log('함수')"
+    // eval(varEval) 
+    // varEval = "document.write('왜 함수');"
+    // eval(varEval)
+
+    // //시간 관련함수
+    // //setTimeout
+    // //clearTimeout
+    // function threeTimer(){
+    //   alert("3초후 실행됩니다.");
+    // }
+
+    // var timeoutId = setTimeout(function(){alert("3초후 실행됩니다.");},3000)
+    // clearTimeout(timeoutId)
+
+    // function intervalTwoSecond(){
+    //   document.write("안녕하세요"+"<br>")
+    // }
+
+    // //1초마다 intervalTwoSecond()실행
+    // var intervalId = setInterval(intervalTwoSecond,1000)
+
+    // clearTimeout(intervalId)
+
+    // function endFunction(){
+    //   clearInterval(printIntervalId);
+    //   document.write("종료")
+    // }
+    // var printTimeOutId = setTimeout(endFunction,7000);
+    // var printIntervalId = setInterval(function(){document.write("*")},2000);
+
+    // new Date객체
+    // console.log(new Date())
+//     var currentDate = new Date();
+// var hours = currentDate.getHours();
+// var minutes = currentDate.getMinutes();
+// var seconds = currentDate.getSeconds();
+
+// var formattedTime = hours + ':' + minutes + ':' + seconds;
+
+// document.write("<h1>"+formattedTime+"</h1>");
+// var today = new Date();
+
+ function clock(){
+  var today = new Date();
+
+  var hours = today.getHours();
+var minutes = today.getMinutes();
+var seconds = today.getSeconds(); 
+
+document.body.innerHTML = hours +":" +minutes +":" +seconds +"<br>";
+
+ }
+
+ setInterval(clock,1000);
+    </script>
+  </head>
+  <body>
+
+
+
+    
+  </body>
+</html>
