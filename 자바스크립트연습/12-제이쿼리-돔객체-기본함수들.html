@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>untitle</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        //js의 foreach
+        // $("p").each(function(index,item){
+        //   console.log(index);
+        //   console.log(item);
+        //   console.log(this);//호출한 놈
+        //   if(index % 2 == 0){//짝수 index
+        //     $(item).css("background","green");
+        //   }else{//홀수 index 
+        //     $(item).css("background","yellow");
+        //   }          
+        // });
+        //html() / text()
+        console.log($("#htmlMethod").html()) //자식 태그까지 다 가져옴
+        console.log($("#textMethod").text()) //태그는 가져오지 않음
+
+        //내용 읽고/쓰기
+        $("#htmlMethod").html("안녕하세요</br>");//innerHtml
+        $("#htmlMethod").text("HELLO</br>");
+
+        //addClass() 클래스 속성 추가
+        //removeClass() 클래스 속성 제거
+        $("#addClass").addClass("addCla");//<div id="addClass" class="addCla"> addClass() 메서드 </div>
+        $(".addCla").css("background","pink");
+
+        $(".remCla").css("background","#00ff00");
+        // $(".addCla").removeClass("addClass");
+
+        //attr(), removeAttr()
+        $("#attrMethod img").attr("src","img/logo.png");
+        console.log($("#attrMethod img").attr("src"));
+
+        $("#attrMethod img").removeAttr("src");
+        console.log($("#attrMethod img").attr("src"));
+
+        // <div id="cssMethod"> CSS METHOD </div>
+        $("#cssMethod").css("width","300px").css("height","100px");
+        $("#cssMethod").css("background","#ff0000");
+
+        console.log($("#cssMethod").css("width"));//300px
+        console.log($("#cssMethod").css("background"));
+        // <div id="removeMthod"> Remove Object! </div>
+        // <div id="emptyMthod"> Empty Object! </div>
+        $("#removeMthod").remove();//객체 제거
+        $("#emptyMthod").empty();//innerhtml=""
+        
+      });
+      </script>   
+  </head>
+  <body>
+    <p> Hello javascript! </p> <!-- 0 -->
+    <p> Hello jQuery! </p> <!-- 1 -->
+    <p> Hello node.js! </p> <!-- 2 -->
+    
+    <div id="htmlMethod"><p>html() 메서드 </p> </div>
+    <div id="textMethod"><p>text() 메서드</p></div>
+    
+    <div id="addClass"> addClass() 메서드 </div>
+    <div id="removeClass" class="remCla"> removeClass() 메서드 </div>
+    
+    <div id="attrMethod">
+       <img>
+       <br>
+       <img>
+    </div>
+    
+    <div id="cssMethod"> CSS METHOD </div>
+    
+    <div id="removeMthod"> Remove Object! </div>
+    <div id="emptyMthod"> Empty Object! </div>
+  </body>
+</html>
