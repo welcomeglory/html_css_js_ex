@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>로또 번호 생성기</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    //id=wrap태그 밑에 있는 모든 p태그들
+    $("#wrap p").css("border","2px solid red");
+    //id=wrap태그 바로 밑에 있는 p태그들만
+    $("#wrap > p").css("border","5px solid green");
+  });
+
+  // $(function(){
+  // });
+
+</script>
+</head>
+<body>
+      <div id="wrap">
+        <p>jQuery selector</p>
+        <p>jQuery selector2</p>
+        <div id="centent">
+           <h1>centent</h1>
+           <p>ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅌ</p>
+           <p>ABCDEFGHIJKLMN</p>
+        </div>
+        <div id="item">
+           <ul>
+              <li class="seoul">서울</li>
+              <li class="gyeonggi_do">경기도</li>
+              <li>충청도</li>
+              <li>전라도</li>
+              <li>경상도</li>
+              <li>강원도</li>
+              <li>제주도</li>
+           </ul>
+        </div>
+     </div>
+</body>
+</html>
