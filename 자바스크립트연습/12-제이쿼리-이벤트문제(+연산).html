@@ -25,16 +25,17 @@
 
       $(document).ready(function () {
         $("#quantity").change(function(){
-          let val1 = $("#price").val();
-          let val2 = $(this).val();
-          $("#total").text(Number(val1)*Number(val2));
+          let price = $("#price").val();
+          let count = $(this).val();
+          $("#total").text(Number(price)*Number(count));
         })
       });
-      $(document).ready(function () {
+      $(document).ready(function(){
        $("#btnTotal").click(function(){
-        let total = 0;   
-        $("input:checkbox:checked").each(function (index,item) {
-          total = total + Number(item.value);
+        let total = 0;    
+        //체크박스는 each구문사용해서         
+        $("input:checked").each(function(index,item) {
+          total = total + Number($(item).val());
         });  
         $("#totalPrice").text(total);
        });
@@ -68,7 +69,7 @@
       <input type="checkbox" name="fruit" class="fruit" value="500" /><br />
       배(1500원)
       <input type="checkbox" name="fruit" class="fruit" value="1500" /><br />
-      <button id="btn1">총합구하기</button><br />
+      <button id="btnTotal">총합구하기</button><br />
       선택한 총가격:<span id="totalPrice"></span>
     </div>
   </body>
