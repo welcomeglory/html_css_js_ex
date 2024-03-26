@@ -39,21 +39,20 @@
           return color;
        }
     }
-
     $(document).ready(function(){
-      let lotto = new Lotto();
-      
-      for(let num of lotto.getNums()){
-        let ball = $("#ball-row > div:first-child").clone();
-        ball.find("rect").attr("fill",lotto.getColor(num));
-        ball.find("text").text(num);
-        $("#ball-row").append(ball);
-      }
-      $("#ball-row > div:first-child").remove();
-      $("#svg-rect").attr("fill",lotto.getColor(lotto.bonusNum));
-      $("#svg-text").text(lotto.bonusNum);
-
+    // 페이지가 로드되면 실행될 함수
+    let lotto = new Lotto(); // Lotto 클래스의 새 인스턴스 생성
+    for(let num of lotto.getNums()){ // Lotto 인스턴스의 getNums 메서드로부터 숫자들을 반복
+        let ball = $("#ball-row > div:first-child").clone(); // 첫 번째 자식 div를 복제하여 새로운 공 생성
+        ball.find("rect").attr("fill",lotto.getColor(num)); // 공의 색을 Lotto 인스턴스의 getColor 메서드로 설정
+        ball.find("text").text(num); // 공에 숫자 텍스트 설정
+        $("#ball-row").append(ball); // 복제된 공을 ball-row 요소에 추가
+    }
+    $("#ball-row > div:first-child").remove(); // 첫 번째 자식 div 삭제
+    $("#svg-rect").attr("fill",lotto.getColor(lotto.bonusNum)); // 보너스 공의 색 설정
+    $("#svg-text").text(lotto.bonusNum); // 보너스 공의 숫자 텍스트 설정
     });
+
   </script>
 
 </head>
