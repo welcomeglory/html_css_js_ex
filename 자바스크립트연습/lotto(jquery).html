@@ -8,37 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> 
 
   <script>
-    function Lotto(){
-       this.count = 7;
-       this.nums = new Array();
-       this.bonusNum = 0;
-       this.getNums = function(){
-          let set = new Set();  
-
-           while(set.size < this.count){
-            set.add( parseInt(Math.random()*45) + 1 )
-           }
-
-           this.nums = Array.from(set); // set을 배열로...
-           this.bonusNum = this.nums[this.nums.length - 1]; //7번째 숫자를 보너스 넘으로
-           this.nums.pop(); //마지막 요소 제거
-
-           return this.nums;
-       }
-       this.getColor = function(num){
-        let color ="black";
-          if(num < 10){
-             color = "orange";
-          }else if(num < 20){
-             color = "purple";
-          }else if(num < 30){
-             color = "purple";
-          }else if(num < 40){
-             color = "blue";
-          }
-          return color;
-       }
-    }
+   
   </script>
 
 </head>
