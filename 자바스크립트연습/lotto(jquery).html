@@ -9,14 +9,37 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
   <script>
-   <c:forEach var="num" items="${lotto.arrList}">
-             <div class="col-lg-2 mt-3 d-flex justify-content-center">
-               <svg class="rounded-circle" width="140" height="140" focusable="false">
-                 <rect width="100%" height="100%" fill="${lotto.getBackground(num)}"/>
-                 <text text-anchor="middle" x="50%" y="50%" fill="white" dy=".3em" font-size="60">${num}</text>
-               </svg>
-             </div>
-         </c:forEach>           
+   function Lotto(){
+       this.count = 7;
+       this.nums = new Array();
+       this.bonusNum = 0;
+       this.getNums = function(){
+          let set = new Set();  
+
+           while(set.size < this.count){
+            set.add( parseInt(Math.random()*45) + 1 )
+           }
+
+           this.nums = Array.from(set); // set을 배열로...
+           this.bonusNum = this.nums[this.nums.length - 1]; //7번째 숫자를 보너스 넘으로
+           this.nums.pop(); //마지막 요소 제거
+
+           return this.nums;
+       }
+       this.getColor = function(num){
+        let color ="black";
+          if(num < 10){
+             color = "orange";
+          }else if(num < 20){
+             color = "purple";
+          }else if(num < 30){
+             color = "purple";
+          }else if(num < 40){
+             color = "blue";
+          }
+          return color;
+       }
+    }         
 
   </script>
 
