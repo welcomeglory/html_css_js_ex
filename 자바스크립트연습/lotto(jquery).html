@@ -50,6 +50,9 @@
         $("#ball-row").append(ball);
       }
       $("#ball-row > div:first-child").remove();
+      $("#svg-rect").attr("fill",lotto.getColor(lotto.bonusNum));
+      $("#svg-text").text(lotto.bonusNum);
+
     });
   </script>
 
