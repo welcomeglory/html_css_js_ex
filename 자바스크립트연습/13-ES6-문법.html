@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게임</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      //var let const(상수)
+      var study = true;
+      study = false;
+      document.write(study);
+
+      // const study2 = true;
+      // study2 = false;
+      // document.write(study2);
+
+      // var study = "js";
+      // if (study) {
+      //   let study = "react";
+      //   console.log("sdasd", study);
+      // }
+
+      // console.log(window.study);
+
+      var study = "자바스트립트";
+
+      if (study) {
+        let study = "리액트";
+        console.log("공부하자", study); // 공부하자 리액트
+      }
+
+      console.log("재밌다", study); // 재밌다 자바스크립트
+
+      //문자열 템플릿
+      let lastname = "홍";
+      let middlename = "길";
+      let firstname = "동";
+
+      console.log(lastname + ", " + middlename + " " + firstname);
+
+      console.log(`${lastname}, ${middlename} ${firstname}`);
+
+      //화살표 함수
+      // let date = function(){
+      //   return new Date();
+      // }
+      // console.log(date);
+
+      let date = () => new Date();
+      console.log(date);
+
+      // let add = (num1, num2) =>{
+      //   return num1+num2;
+      // }
+      // console.log(add(1, 2));
+      let add = (num1, num2) => num1 + num2;
+      // console.log(add(1,2));
+
+      var sandwich = {
+        bread: "플랫 화이트",
+        meat: "베이컨",
+        topping: ["치즈", "상추", "칠리소스"],
+      };
+
+      var { bread, meat } = sandwich;
+      console.log(bread, meat); // 플랫 화이트 베이컨
+
+
+    </script>
+  </head>
+  <body></body>
+</html>
