@@ -81,11 +81,29 @@
       let name = "백두산";
       let elevation = 2744;
 
-      let funHike = {name,elevation};
+      let print = () => {
+        console.log(`${this.name}의 높이는 ${this.elevation}m 입니다.`)
+      }
 
-      console.log(funHike);
+      let funHike = {name : "백두산",elevation : 2744,print: function(){
+        console.log(`${this.name}의 높이는 ${this.elevation}m 입니다.`)
+      }};
+      // let funHike = {name,elevation,print};
+      funHike.print();
+      // console.log(funHike);
 
+      //스프레드 연산자(...)
+      let food =["닭갈비","닭꼬치","닭강정"];
+      let drink =["소주","맥주"];
 
+      // let mix = [food,drink];
+      // console.log(mix);
+
+      // let [last] = food.reverse();//reverse()가변함수
+
+      let [last] = [...food].reverse();//원본유지
+      // console.log(last);
+      console.log(food);
 
     </script>
   </head>
