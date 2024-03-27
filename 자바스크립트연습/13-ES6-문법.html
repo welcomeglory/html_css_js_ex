@@ -66,6 +66,26 @@
       var { bread, meat } = sandwich;
       console.log(bread, meat); // 플랫 화이트 베이컨
 
+      let func = ({topping}=sandwich)=>{
+        console.log(topping);
+      }      
+      // func(sandwich)
+      console.log(sandwich);
+      // 배열 구조분해
+      let [first,second] = ["a","b","c"];
+      console.log(first);
+      console.log(second);
+
+      //2. 객체 리터럴 개선
+      //구조분해의 반대
+      let name = "백두산";
+      let elevation = 2744;
+
+      let funHike = {name,elevation};
+
+      console.log(funHike);
+
+
 
     </script>
   </head>
