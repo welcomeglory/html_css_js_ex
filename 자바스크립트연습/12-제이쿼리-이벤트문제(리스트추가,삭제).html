@@ -17,28 +17,52 @@
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-      $(document).ready(function(){
-        let total = "";         
-        $("#add").click(function(){
-          total += "<li>"+$("#words").val()+" X</li>";
-          $("#uList").html(total);   
-          $("#words").val("");      
+      $(document).ready(function () {
+        // let total = "";
+        // $("#add").click(function () {
+        //   total += "<li>" + $("#words").val() + " X</li>";
+        //   $("#uList").html(total);
+        //   $("#words").val("");
+        // });
+        // $(document).on("click", "li", function () {
+        //   $(this).remove();
+        // });
+        //리스트 추가 클릭 이벤트
+        // $("#add").click(function(){
+        //   let text = $("#words").val();
+        //   //빈공란 처리
+        //   if(text==""){
+        //     return;
+        //   }
+        //   let list = $("<li class='list'></li>");
+        //   list.html(text+" X");
+        //   $("#uList").append(list);
+        // });
+        // //리스트 삭제 -> 동적 이벤트 처리
+        // $(document).on("click", "#uList .list", function () {
+        //   $(this).remove();//li자기자신 호출한놈
+        // });
+
+        // $("#word4").keydown(function(){
+
+        // });
+        //예전 jQuery라면 on이 아니라 bind나 live
+        $(document).on("keyup", "#word4", function (event) {
+          $("#code").text(event.keyCode);
         });
-        $(document).on("click","li",function(){
-          $(this).remove();
-        });     
       });
     </script>
   </head>
   <body>
-    <body>
-      <h1>16.리스트 추가/삭제</h1>
-      <input type="text" id="words" />
-      <button type="button" id="add">추가</button><br />
-      <ui id="uList"></ui>
-      <br />
-      <br />
-      <br />
-    </body>
+    <h1>16.리스트 추가/삭제</h1>
+    <input type="text" id="words" />
+    <button type="button" id="add">추가</button><br />
+    <ui id="uList"></ui>
+    <br />
+    <br />
+    <br />
+    <h1>13.아스키코드 출력</h1>
+    <input type="text" id="word4" maxlength="1" />
+    <span id="code"></span>
   </body>
 </html>
