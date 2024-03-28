@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게임</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(() => {
+        $.ajax({
+          type: "get",
+          url: "http://sample.bmaster.kro.kr/contacts?pageno=3&pagesize=10",
+          success: function (data) {
+              let htmls="";
+              $(data.contacts).each(function(){
+                htmls += '<tr>';
+                htmls += '<td>'+this.no+'</td>';
+                htmls += '<td>'+this.name+'</td>';
+                htmls += '<td>'+this.tel+'</td>';
+                htmls += '<td>'+this.address+'</td>';
+                htmls += '<td>'+'<img src='+this.photo+'/>'+'</td>';
+                htmls += '<td>'+'<input type="button" value="삭제"/>'+'</td>';
+                htmls += '</tr>';
+              })
+              $("#table").append(htmls);
+          }
+        });
+      });      
+      $(document).on("click","tr",function(){
+          $(this).remove();
+        });
+    </script>
+  </head>
+  <body>
+    <table id="table" width="500" border="1">
+      <tr>
+        <td>번호</td>
+        <td>이름</td>
+        <td>전화번호</td>
+        <td>주소</td>
+        <td>사진</td>
+        <td>삭제</td>
+      </tr>
+    </table>
+  </body>
+</html>
