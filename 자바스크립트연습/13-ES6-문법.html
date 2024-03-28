@@ -7,9 +7,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
       //var let const(상수)
-      var study = true;
-      study = false;
-      document.write(study);
+      // var study = true;
+      // study = false;
+      // document.write(study);
 
       // const study2 = true;
       // study2 = false;
@@ -66,13 +66,13 @@
       var { bread, meat } = sandwich;
       console.log(bread, meat); // 플랫 화이트 베이컨
 
-      let func = ({topping}=sandwich)=>{
+      let func = ({ topping } = sandwich) => {
         console.log(topping);
-      }      
+      };
       // func(sandwich)
       console.log(sandwich);
       // 배열 구조분해
-      let [first,second] = ["a","b","c"];
+      let [first, second] = ["a", "b", "c"];
       console.log(first);
       console.log(second);
 
@@ -82,29 +82,85 @@
       let elevation = 2744;
 
       let print = () => {
-        console.log(`${this.name}의 높이는 ${this.elevation}m 입니다.`)
-      }
+        console.log(`${this.name}의 높이는 ${this.elevation}m 입니다.`);
+      };
 
-      let funHike = {name : "백두산",elevation : 2744,print: function(){
-        console.log(`${this.name}의 높이는 ${this.elevation}m 입니다.`)
-      }};
+      let funHike = {
+        name: "백두산",
+        elevation: 2744,
+        print: function () {
+          console.log(`${this.name}의 높이는 ${this.elevation}m 입니다.`);
+        },
+      };
       // let funHike = {name,elevation,print};
       funHike.print();
       // console.log(funHike);
 
       //스프레드 연산자(...)
-      let food =["닭갈비","닭꼬치","닭강정"];
-      let drink =["소주","맥주"];
+      let food = ["닭갈비", "닭꼬치", "닭강정"];
+      let drink = ["소주", "맥주"];
 
       // let mix = [food,drink];
       // console.log(mix);
 
       // let [last] = food.reverse();//reverse()가변함수
 
-      let [last] = [...food].reverse();//원본유지
+      let [last] = [...food].reverse(); //원본유지
       // console.log(last);
       console.log(food);
 
+      //클래스
+      // class User{
+      //   //생성자 함수
+      //   constructor(name){
+      //     this.name=name;
+      //   }
+      //   sayHi(){
+      //     alert(this.name);
+      //   }
+      // }
+      // //객체 생성
+      // let user = new User("홍길동");
+      // user.sayHi();
+
+      // alert(typeof name);
+
+      class Grade {
+        constructor(kor, eng, math) {
+          this.kor = kor;
+          this.eng = eng;
+          this.math = math;
+        }
+
+        getAvg() {
+          return (this.kor + this.eng + this.math) / 3.0;
+        }
+
+        getTotal() {
+          return this.kor + this.eng + this.math;
+        }
+        getGrade() {
+          var avg = this.getAvg();
+          var str = "가 입니다";
+
+          if (avg >= 90) {
+            str = "수 입니다.";
+          } else if (avg >= 80) {
+            str = "우 입니다.";
+          } else if (avg >= 70) {
+            str = "미 입니다.";
+          } else {
+            str = "가 입니다.";
+          }
+
+          return str;
+        }
+      }
+
+      let grade = new Grade(90, 60, 90);
+      console.log(grade.getAvg());
+      console.log(grade.getTotal());
+      console.log(grade.getGrade());
     </script>
   </head>
   <body></body>
