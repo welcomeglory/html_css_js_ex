@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게임</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+     $(document).ready(()=>{
+      //제이쿼리안에 ajax함수
+      //$.ajax({객체})
+      //js내에서 ajax함수는 웹브라우저
+      $.ajax({
+        type:"get",
+        url:"https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json",
+        success:function(data){
+          console.log(data);
+          console.log(data.squadName);
+          console.log(data.members[0].name);
+          // js의 foreach
+          $(data.members).each(function(index,item){
+            console.log(item.name);
+          });
+        },
+        //java에서 throws Exception
+        error:function(xhr, textStatus, errorThrown){
+          console.log("error!!!");
+          console.log(xhr);
+          console.log(textStatus);
+          console.log(errorThrown);
+        }
+      });
+     });
+
+    </script>
+  </head>
+  <body></body>
+</html>
