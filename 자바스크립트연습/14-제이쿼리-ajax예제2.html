@@ -19,15 +19,16 @@
                 htmls += '<td>'+this.tel+'</td>';
                 htmls += '<td>'+this.address+'</td>';
                 htmls += '<td>'+'<img src='+this.photo+'/>'+'</td>';
-                htmls += '<td>'+'<input type="button" value="삭제"/>'+'</td>';
+                htmls += '<td>'+'<input type="button" class="del-button" value="삭제"/>'+'</td>';
                 htmls += '</tr>';
               })
               $("#table").append(htmls);
           }
         });
       });      
-      $(document).on("click","tr",function(){
-          $(this).remove();
+      $(document).on("click",".del-button",function(){
+        console.log(this);
+          $(this).parent().parent().remove();
         });
     </script>
   </head>
