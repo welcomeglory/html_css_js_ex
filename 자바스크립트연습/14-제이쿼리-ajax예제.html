@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게임</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(() => {
+        $.ajax({
+          type: "get",
+          url: "https://sample.bmaster.kro.kr/contacts?pageno=3&pagesize=10",
+          success: function (result) {
+            console.log(result);
+
+            $("#list-table").append(
+              $("<tr></tr>")
+                .append($("<td></td>").text("번호"))
+                .append($("<td></td>").text("이름"))
+                .append($("<td></td>").text("전화번호"))
+                .append($("<td></td>").text("주소"))
+                .append($("<td></td>").text("사진"))
+                .append($("<td></td>").text("삭제"))
+            );
+
+            $(result.contacts).each(function () {
+              $("#list-table").append(
+                $("<tr></tr>")
+                  .append($("<td></td>").text(this.no))
+                  .append($("<td></td>").text(this.name))
+                  .append($("<td></td>").text(this.tel))
+                  .append($("<td></td>").text(this.address))
+                  .append(
+                    $("<td></td>").append(
+                      $("<img></img>").attr("src", this.photo)
+                    )
+                  )
+                  .append(
+                    $("<td></td>").append(
+                      $("<input></input>")
+                        .attr("id", this.no)
+                        .attr("type", "button")
+                        .attr("class", "del-button")
+                        .attr("value", "삭제")
+                    )
+                  )
+              );
+            });
+          },
+          error: function (xhr, textStatus, errorThrown) {
+            console.log("error!!!");
+            console.log(xhr);
+            console.log(textStatus);
+            console.log(errorThrown);
+          },
+        });
+      });
+    </script>
+    <!-- <script>
+      $(document).on("click", ".del-button", function () {
+        console.log(this);
+        $(this).parent().parent().remove();
+      });
+    </script> -->
+  </head>
+  <body>
+    <table id="list-table" width="500" border="1"></table>
+  </body>
+</html>
