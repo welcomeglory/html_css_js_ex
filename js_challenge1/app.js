@@ -31,18 +31,25 @@ const loginForm = document.querySelector("#login-form");
 
 const loginInput = document.querySelector("#login-form input");
 
+const link = document.querySelector("a");
+
+
 function onLoginSubmit(event){
 
-    event.preventDefault();// 기본 동작이 실행방지.
+    event.preventDefault();//기본 동작이 실행방지.
     console.log(loginInput.value);
-    //유효성 검사
-    // const username = loginInput.value;
-    // console.log(username);   
+
 }
 
-loginForm.addEventListener("submit",onLoginSubmit );
+function handleLinkClick(event){
+    event.preventDefault();//기본 동작이 실행방지.
+    console.dir(event);
+}
 
-// onLoginSubmit(info)
+
+
+loginForm.addEventListener("submit",onLoginSubmit);
+link.addEventListener("click",handleLinkClick)
 
 
 
