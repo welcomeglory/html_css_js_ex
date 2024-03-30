@@ -11,17 +11,39 @@
 
 // const loginForm2 = document.getElementById("login-form");
 
+// const loginForm = document.querySelector("#login-form input");
+
+// const loginButton = document.querySelector("#login-form button");
+
+// function onhtnClick(){
+//     //유효성 검사
+//     const username = loginInput.value;
+//     if(username === ""){
+//         alert("Please write your name.");
+//     }else if(username.length > 15){
+//         alert("Your name is too long.");
+//     }
+// }
+
+// loginButton.addEventListener("click",onhtnClick );
+
+const loginForm = document.querySelector("#login-form");
+
 const loginInput = document.querySelector("#login-form input");
 
-const loginButton = document.querySelector("#login-form button");
+function onLoginSubmit(event){
 
-function onhtnClick(){
-    console.dir(loginInput.value);
-    console.log("click");
+    event.preventDefault();// 기본 동작이 실행방지.
+    console.log(loginInput.value);
+    //유효성 검사
+    // const username = loginInput.value;
+    // console.log(username);   
 }
 
+loginForm.addEventListener("submit",onLoginSubmit );
 
-loginButton.addEventListener("click",onhtnClick );
+// onLoginSubmit(info)
+
 
 
 
