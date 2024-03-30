@@ -37,6 +37,7 @@ function onLoginSubmit(event){
     event.preventDefault();//기본 동작이 실행방지.
     loginForm.classList.add(HIDDEN_CLASSNAME);
     const username = loginInput.value;
+    localStorage.setItem("username",username);
     //아래 두 방법 다 String이랑 변수를 하나로 합쳐주고 있음.
     greeting.innerText = "Hello " + username;
     //백틱(`)사용으로 띄어쓰기를 편하게 쓸수 있음.
