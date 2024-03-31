@@ -1,23 +1,16 @@
-import "./styles.css";
+const title = document.querySelector("body");
 
-const body = document.body;
-
-const BIG_SCREEN = "bigScreen";
-const MEDIUM_SCREEN = "mediumScreen";
-const SMALL_SCREEN = "smallScreen";
-
-function handleResize() {
-  const width = window.innerWidth;
-  if (width > 1000) {
-    body.classList.add(BIG_SCREEN);
-    body.classList.remove(MEDIUM_SCREEN);
-  } else if (width <= 1140 && width >= 700) {
-    body.classList.add(MEDIUM_SCREEN);
-    body.classList.remove(BIG_SCREEN, SMALL_SCREEN);
-  } else {
-    body.classList.remove(MEDIUM_SCREEN);
-    body.classList.add(SMALL_SCREEN);
+function handleWindowResize() {
+  // 화면 사이즈에 따라 배경색이 바뀌도록 설정
+  if (window.innerWidth >= 768) {
+    title.style.backgroundColor = "#FFDB58";
+  } 
+  else if(window.innerWidth <768 && window.innerWidth > 400){
+    title.style.backgroundColor = "purple";
+  }
+  else{
+    title.style.backgroundColor = "blue";
   }
 }
 
-window.addEventListener("resize", handleResize);
+window.addEventListener("resize", handleWindowResize);
