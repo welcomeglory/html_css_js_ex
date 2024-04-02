@@ -1,41 +1,35 @@
-// <⚠️ DONT DELETE THIS ⚠️>
-import "./styles.css";
-const colors = ["#1abc9c", "#3498db", "#9b59b6", "#f39c12", "#e74c3c"];
-// <⚠️ /DONT DELETE THIS ⚠️>
+const body = document.querySelector("body");
 
-/*
-✅ The text of the title should change when the mouse is on top of it.
-✅ The text of the title should change when the mouse is leaves it.
-✅ When the window is resized the title should change.
-✅ On right click the title should also change.
-✅ The colors of the title should come from a color from the colors array.
-✅ DO NOT CHANGE .css, or .html files.
-✅ ALL function handlers should be INSIDE of "superEventHandler"
-*/
+body.innerHTML="";
 
-const title = document.querySelector("h2");
+let random = 0;
 
-const superEventHandler = {
-  handleMouseOver: function () {
-    title.innerText = "The mouse is here!";
-    title.style.color = colors[Math.floor(Math.random() * colors.length)];
-  },
-  handleMouseOut: function () {
-    title.innerText = "The mouse is gone!";
-    title.style.color = colors[Math.floor(Math.random() * colors.length)];
-  },
-  handleResize: function () {
-    title.innerText = "You just resized!";
-    title.style.color = colors[Math.floor(Math.random() * colors.length)];
-  },
-  handleRightClick: function (event) {
-    event.preventDefault();
-    title.innerText = "That was a right click!";
-    title.style.color = colors[Math.floor(Math.random() * colors.length)];
-  },
-};
+body.innerHTML += `<h1>Random Number Game</h1>`;
 
-title.addEventListener("mouseover", superEventHandler.handleMouseOver);
-title.addEventListener("mouseout", superEventHandler.handleMouseOut);
-window.addEventListener("resize", superEventHandler.handleResize);
-window.addEventListener("contextmenu", superEventHandler.handleRightClick);
+body.innerHTML += `<h3>Generate a number between 0 and <input id="rangeNum" type="number" max="40"></h3>`;
+
+body.innerHTML += `<h4>Guess the number: <input id="choseNum" type="number" max="40"> <button id="printButton">Play!</button></h4>`;
+
+body.innerHTML += `<h4 id="result">You chose: </h4>`;
+
+const choseNum = document.getElementById("choseNum");
+const result = document.getElementById("result");
+const printButton = document.getElementById("printButton");
+const rangeNum = document.getElementById("rangeNum");
+
+printButton.addEventListener("click", function() {
+    result.innerHTML = "";
+    random = Math.floor(Math.random() * (parseInt(rangeNum.value) + 1));
+    result.innerHTML += "You chose: " + choseNum.value + ", the machine chose: " + random;
+    if (parseInt(choseNum.value) < random) {
+        result.innerHTML += `<h4>You lost!</h4>`
+    } else if (parseInt(choseNum.value) > random) {
+        result.innerHTML += `<h4>You win!</h4>`
+    } else {
+        result.innerHTML += `<h4>Draw!</h4>`
+    }
+});
+
+rangeNum.addEventListener("input", function() {
+    choseNum.setAttribute("max", this.value);
+});
